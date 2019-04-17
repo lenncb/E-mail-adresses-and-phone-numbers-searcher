@@ -14,7 +14,15 @@ phone_model = re.compile(r'''(
     (\d{3})                         # Numbers from 7th to 9th 
 )''', re.VERBOSE)
 
-# TODO: Code contain a model to find e-mail address
+# Code containing a model to find e-mail address
+
+email_model = re.compile(r'''(
+[a-zA-Z0-9._%+-]+
+@
+[a-zA-Z0-9.-]+
+\.
+[a-zA-Z]{2,4}
+)''', re.VERBOSE)
 
 # TODO: Code block looking for matches in clipboard
 
