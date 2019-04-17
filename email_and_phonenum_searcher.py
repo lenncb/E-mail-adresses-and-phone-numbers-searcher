@@ -35,7 +35,12 @@ for groups in phone_model.findall(text):
 for groups in email_model.findall((text)):
     matches.append(groups[0])
 
-# TODO: Copying results to clipboard
+# Showing results from the clipboard
 
-
+if len(matches) > 0:
+    pyperclip.copy('\n'.join(matches))
+    print("Copied to the clipboard")
+    print('\n'.join(matches))
+else:
+    print('I don`t find any e-mail adress and phone number.')
 
