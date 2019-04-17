@@ -1,6 +1,6 @@
 # This program is responsible for searching an e-mails and phone numbers in clipboard
 
-import re
+import re, pyperclip
 
 # This block of code contain a model to find phone numbers
 
@@ -24,7 +24,16 @@ email_model = re.compile(r'''(
 [a-zA-Z]{2,4}
 )''', re.VERBOSE)
 
-# TODO: Code block looking for matches in clipboard
+# Code block looking for matches in clipboard
+
+text = str(pyperclip.paste())
+matches = []
+
+for groups in phone_model.findall(text):
+    matches.append(groups[0])
+
+for groups in email_model.findall((text)):
+    matches.append(groups[0])
 
 # TODO: Copying results to clipboard
 
